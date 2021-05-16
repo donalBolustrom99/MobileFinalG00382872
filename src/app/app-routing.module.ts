@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'battle',
+    loadChildren: () => import('./battle/battle.module').then( m => m.BattlePageModule)
+  },
+  {
+    path: 'heroes',
+    loadChildren: () => import('./heroes/heroes.module').then( m => m.HeroesPageModule)
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
+  },
 ];
 
 @NgModule({

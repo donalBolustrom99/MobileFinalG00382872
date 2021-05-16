@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Create
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Create</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--Prompt User to enter information for storage-->
+  <ion-item>
+    <ion-label>Made Up Name: </ion-label>
+    <ion-input placeholder="Made Up Name" [(ngModel)]="cHMadeName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Real Name</ion-label>
+    <ion-input placeholder="Made Up Name" [(ngModel)]="cHName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>First Appearnace</ion-label>
+    <ion-input placeholder="First Appearnace" [(ngModel)]="cHFirst"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Power Level</ion-label>
+    <ion-input type="number" placeholder="72" [(ngModel)]="cHPower"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Image Link</ion-label>
+    <ion-input type="url" placeholder="Picture URL" [(ngModel)]="cHPicture"></ion-input>
+  </ion-item>
+
+  <!--send information to be stored for later use-->
+  <ion-button expand="block" (click)="updateStatus()">Save Hero</ion-button>
+
+  <!--informing the user-->
+  <h3>Enter Details and Hit Save to Return to Heroes Page!</h3>
+
+    <!--Created hero information-->
+    <ion-card>
+      <ion-card-header>
+        <img src={{cHPicture}}>
+        <ion-card-subtitle>{{cHName}}</ion-card-subtitle>
+        <ion-card-title>{{cHMadeName}}</ion-card-title>
+        <ion-card-title>Power: {{cHPower}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content><b>First Appearnace:</b> {{cHFirst}}</ion-card-content>
+    </ion-card>
+  
+</ion-content>

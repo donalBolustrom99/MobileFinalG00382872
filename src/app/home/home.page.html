@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,47 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!--Information for the user-->
+  <h1><b>Heros Battle!</b></h1>
+  <p>Hello, Welcome to the App! Here is the information<br>
+    <b>Home:</b> Home page which will bring you back to here and make the night time mode availible.<br>
+    <b>Heroes:</b> This will take you through our catalogue of Heroes we have availible.<br>
+    <b>Create:</b> This will bring you to a page where you can create your own character and display later on.<br>
+    <b>Battle!:</b> Here you will enter a small mini game where two characters are assingned and will battle to determine the winner. <br>
+  </p>
+
+    <!--tabs used for navigation-->
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="Home" [routerLink]="['/home']">
+          <ion-icon name="Home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="Heroes" [routerLink]="['/heroes']">
+          <ion-icon name="person-circle"></ion-icon>
+          <ion-label>Heroes</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="create" [routerLink]="['/create']">
+          <ion-icon name="add"></ion-icon>
+          <ion-label>Create</ion-label>
+        </ion-tab-button>
+         
+        <ion-tab-button tab="battle" [routerLink]="['/battle']">
+          <ion-icon name="skull"></ion-icon>
+          <ion-label>Battle!</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+
+  <!--Flashlight plugin for users to use during night time, will access phone to turn flash on-->
+  <h3>Flashlight (for night mode)</h3>
+  <ion-button (click)="flashlightToggle()">Flashlight</ion-button>
 </ion-content>
+
+
